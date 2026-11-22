@@ -1,0 +1,290 @@
+.reporte-page {
+  min-height: 100vh;
+  padding: 45px 60px;
+  background: linear-gradient(135deg, #f8fbff 0%, #eaf2ff 100%);
+}
+
+.reporte-header {
+  background: white;
+  border-radius: 24px;
+  padding: 32px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 10px solid #1e4e9a;
+  box-shadow: 0 20px 50px rgba(30, 78, 154, 0.12);
+  margin-bottom: 35px;
+}
+
+.reporte-header h1 {
+  margin: 0;
+  color: #12356b;
+  font-size: 34px;
+}
+
+.reporte-header p {
+  margin: 8px 0 0;
+  color: #6b7280;
+}
+
+.reporte-header button {
+  border: none;
+  border-radius: 14px;
+  padding: 14px 24px;
+  background: #1e4e9a;
+  color: white;
+  font-weight: 800;
+}
+
+.reporte-card {
+  background: white;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 18px 45px rgba(30, 78, 154, 0.1);
+}
+
+.reporte-section {
+  margin-top: 30px;
+  margin-bottom: 22px;
+}
+
+.reporte-section:first-child {
+  margin-top: 0;
+}
+
+.reporte-section h2 {
+  margin: 0;
+  color: #12356b;
+  font-size: 24px;
+}
+
+.reporte-section p {
+  margin: 8px 0 0;
+  color: #6b7280;
+}
+
+.reporte-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.reporte-grid.two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.reporte-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.reporte-group.full {
+  margin-bottom: 22px;
+}
+
+.reporte-group label {
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 9px;
+}
+
+.reporte-group input,
+.reporte-group select,
+.reporte-group textarea {
+  border: 2px solid #d6ddea;
+  border-radius: 12px;
+  padding: 0 15px;
+  font-size: 15px;
+  outline: none;
+  background: white;
+}
+
+.reporte-group input,
+.reporte-group select {
+  height: 52px;
+}
+
+.reporte-group textarea {
+  min-height: 120px;
+  padding: 14px 15px;
+  resize: vertical;
+  font-family: Arial, sans-serif;
+}
+
+.reporte-group input:focus,
+.reporte-group select:focus,
+.reporte-group textarea:focus {
+  border-color: #1e4e9a;
+  box-shadow: 0 0 0 4px rgba(30, 78, 154, 0.1);
+}
+
+.reporte-group small {
+  margin-top: 7px;
+  color: #6b7280;
+  text-align: right;
+}
+
+.duracion-box {
+  margin-top: 28px;
+  background: #eaf2ff;
+  border: 2px solid #d6e5ff;
+  border-radius: 18px;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.duracion-box span {
+  color: #12356b;
+  font-weight: 800;
+}
+
+.duracion-box strong {
+  color: #1e4e9a;
+  font-size: 22px;
+}
+
+.reporte-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 35px;
+}
+
+.btn-reporte-cancelar,
+.btn-reporte-guardar {
+  border: none;
+  border-radius: 14px;
+  padding: 15px 28px;
+  font-weight: 800;
+}
+
+.btn-reporte-cancelar {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.btn-reporte-guardar {
+  background: linear-gradient(90deg, #f5a623, #f97316);
+  color: white;
+  box-shadow: 0 15px 30px rgba(249, 115, 22, 0.28);
+}
+
+.btn-reporte-guardar:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* POPUP */
+
+.reporte-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: reporteFade 0.25s ease;
+}
+
+.reporte-popup-card {
+  width: 430px;
+  background: white;
+  border-radius: 22px;
+  padding: 35px;
+  text-align: center;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
+  animation: reportePopup 0.25s ease;
+}
+
+.reporte-popup-icon {
+  width: 72px;
+  height: 72px;
+  margin: auto;
+  margin-bottom: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+}
+
+.reporte-popup-icon.success {
+  background: #e9fbe9;
+}
+
+.reporte-popup-icon.error,
+.reporte-popup-icon.info {
+  background: #fff4d8;
+}
+
+.reporte-popup-card h2 {
+  margin: 0;
+  color: #12356b;
+}
+
+.reporte-popup-card p {
+  color: #666;
+  margin: 18px 0 28px;
+  line-height: 1.6;
+}
+
+.reporte-popup-card button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #f5a623, #f97316);
+  color: white;
+  font-weight: 800;
+}
+
+@keyframes reportePopup {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes reporteFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .reporte-page {
+    padding: 25px;
+  }
+
+  .reporte-header {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .reporte-grid,
+  .reporte-grid.two {
+    grid-template-columns: 1fr;
+  }
+
+  .reporte-actions {
+    flex-direction: column;
+  }
+
+  .btn-reporte-cancelar,
+  .btn-reporte-guardar {
+    width: 100%;
+  }
+}
