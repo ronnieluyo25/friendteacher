@@ -55,7 +55,7 @@ function CrearUsuario() {
       const token = sessionStorage.getItem("token");
 
       await axios.post(
-        "http://127.0.0.1:8000/usuarios/",
+        "/api/usuarios/",
         {
           id_rol: Number(form.id_rol),
           username: form.username,

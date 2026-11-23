@@ -24,7 +24,7 @@ function ListaAlumnos() {
     try {
       setLoading(true);
 
-      const res = await axios.get("http://127.0.0.1:8000/usuarios/", {
+      const res = await axios.get("/api/usuarios/", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -35,7 +35,7 @@ function ListaAlumnos() {
       const detalleAlumnos = await Promise.all(
         usuariosAlumnos.map(async (u) => {
           const detalle = await axios.get(
-            `http://127.0.0.1:8000/usuarios/${u.id_usuario}`,
+            `/api/usuarios/${u.id_usuario}`,
             {
               headers: { Authorization: `Bearer ${token}` },
             }
@@ -73,7 +73,7 @@ function ListaAlumnos() {
   const confirmarEliminar = async () => {
     try {
       await axios.patch(
-        `http://127.0.0.1:8000/usuarios/${alumnoEliminar.id_usuario}/desactivar`,
+        `/api/usuarios/${alumnoEliminar.id_usuario}/desactivar`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -91,7 +91,7 @@ function ListaAlumnos() {
   const guardarEdicion = async () => {
     try {
       await axios.patch(
-        `http://127.0.0.1:8000/usuarios/${alumnoEditar.id_usuario}/actualizar`,
+        `/api/usuarios/${alumnoEditar.id_usuario}/actualizar`,
         {
           username: alumnoEditar.username,
           email: alumnoEditar.email,

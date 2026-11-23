@@ -35,7 +35,7 @@ function MiPerfilTutor() {
       setLoading(true);
 
       const response = await axios.get(
-        "http://127.0.0.1:8000/tutores/mi-perfil",
+        "/api/tutores/mi-perfil",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -124,7 +124,7 @@ function MiPerfilTutor() {
       setGuardando(true);
 
       await axios.put(
-        "http://127.0.0.1:8000/tutores/mi-perfil",
+        "/api/tutores/mi-perfil",
         {
           celular: perfil.celular || null,
           correo: perfil.correo || null,

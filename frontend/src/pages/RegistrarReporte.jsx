@@ -45,9 +45,9 @@ function RegistrarReporte() {
         },
       };
 
-      const alumnosRes = await axios.get("http://127.0.0.1:8000/alumnos/", config);
-      const cursosRes = await axios.get("http://127.0.0.1:8000/cursos/", config);
-      const modalidadesRes = await axios.get("http://127.0.0.1:8000/modalidades/", config);
+      const alumnosRes = await axios.get("/api/alumnos/", config);
+      const cursosRes = await axios.get("/api/cursos/", config);
+      const modalidadesRes = await axios.get("/api/modalidades/", config);
 
       setAlumnos(alumnosRes.data);
       setCursos(cursosRes.data);
@@ -152,7 +152,7 @@ function RegistrarReporte() {
       };
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/reportes/",
+        "/api/reportes/",
         data,
         {
           headers: {

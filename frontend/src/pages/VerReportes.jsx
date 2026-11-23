@@ -29,7 +29,7 @@ function VerReportes() {
   const cargarReportes = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://127.0.0.1:8000/reportes/", {
+      const res = await axios.get("/api/reportes/", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setReportes(res.data);
@@ -117,7 +117,7 @@ function VerReportes() {
   const aprobar = async () => {
     try {
       await axios.put(
-        "http://127.0.0.1:8000/reportes/validar-multiple/",
+        "/api/reportes/validar-multiple/",
         seleccionados,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -139,7 +139,7 @@ function VerReportes() {
 
     try {
       await axios.put(
-        "http://127.0.0.1:8000/reportes/anular-multiple/",
+        "/api/reportes/anular-multiple/",
         {
           ids_reportes: seleccionados,
           motivo_anulacion: motivo,

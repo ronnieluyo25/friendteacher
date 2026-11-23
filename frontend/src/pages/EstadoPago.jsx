@@ -40,7 +40,7 @@ function EstadoPago() {
       setMensaje("");
 
       const response = await axios.get(
-        "http://127.0.0.1:8000/reportes/estado-pagos",
+        "/api/reportes/estado-pagos",
         {
           headers: {
             Authorization: `Bearer ${token}`,

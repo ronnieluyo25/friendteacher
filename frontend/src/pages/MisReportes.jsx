@@ -27,7 +27,7 @@ function MisReportes() {
       setLoading(true);
 
       const response = await axios.get(
-        "http://127.0.0.1:8000/reportes/mis-reportes",
+        "/api/reportes/mis-reportes",
         {
           headers: {
             Authorization: `Bearer ${token}`,
